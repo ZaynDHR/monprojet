@@ -355,7 +355,7 @@ function setActivePage(page: string) {
         </div>
       </section>
     `
-    document.querySelector(".submit-link-btn")?.addEventListener("click", () => navigate("submit"))
+    
     return
   }
   
@@ -391,10 +391,6 @@ function setupKeyboardShortcuts() {
     if (e.key === "/" && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
       e.preventDefault()
       document.getElementById("search-input")?.focus()
-    }
-    if (e.key === "?" && document.activeElement?.tagName !== "INPUT" && document.activeElement?.tagName !== "TEXTAREA") {
-      e.preventDefault()
-      showHelpModal()
     }
     if (e.key === "Escape") {
       closeHelpModal()
@@ -437,9 +433,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <a href="#" class="nav-link" data-page="about">About</a>
       </nav>
       <div class="header-actions">
-        <div class="shortcut-hint" id="shortcut-hint" title="Press ? for shortcuts">
-          <span>Shortcuts</span> <kbd>?</kbd>
-        </div>
+        
         <div class="search-container" id="desktop-search">
           <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
@@ -483,7 +477,7 @@ setupKeyboardShortcuts()
 setupTypingAnimation()
 
 document.getElementById("theme-toggle")?.addEventListener("click", storage.toggleTheme)
-document.getElementById("shortcut-hint")?.addEventListener("click", showHelpModal)
+
 
 document.getElementById("hamburger")?.addEventListener("click", () => {
   document.getElementById("nav")?.classList.toggle("open")

@@ -4,5 +4,5 @@ export const store = {
   bookmarks: [] as number[],
   ratings: {} as Record<number, number>,
   visitCounts: {} as Record<number, number>,
-  submittedResources: [] as any[]
+  submittedResources: [] as Resource[]
 }
