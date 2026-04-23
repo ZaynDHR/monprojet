@@ -268,9 +268,6 @@ function setActivePage(page: string) {
         <div class="hero-content">
           <h1>Your Gateway to Development Knowledge</h1>
           <p class="subtitle">Curated resources to help you become a better developer</p>
-          <div class="quick-categories">
-            ${categories.slice(1).map(cat => `<button class="quick-cat-btn" data-category="${cat}">${cat}</button>`).join("")}
-          </div>
         </div>
         <div class="code-animation">
           <pre><code id="typing-code"></code></pre>
@@ -368,17 +365,6 @@ function setActivePage(page: string) {
       document.querySelectorAll(".category-tab").forEach(t => t.classList.remove("active"))
       tab.classList.add("active")
       renderResources()
-    })
-  })
-  
-  document.querySelectorAll(".quick-cat-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const cat = (btn as HTMLButtonElement).dataset.category || "All"
-      store.activeCategory = cat
-      document.querySelectorAll(".category-tab").forEach(t => t.classList.remove("active"))
-      document.querySelector(`[data-category="${cat}"]`)?.classList.add("active")
-      renderResources()
-      document.getElementById("resource-grid")?.scrollIntoView({ behavior: "smooth" })
     })
   })
   

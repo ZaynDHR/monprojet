@@ -1,3 +1,5 @@
+import { store } from '../state/store'
+
 const THEME_KEY = "devhub_theme"
 
 export function loadTheme() {
